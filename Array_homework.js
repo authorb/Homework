@@ -32,6 +32,7 @@ console.log(getValues('completed'));
 function sortBy(key) {
   return todos.sort((a, b) => (a[key] < b[key] ? -1 : (a[key] > b[key] ? 1 : 0)));
 }
+
 console.log(sortBy('id'));
 console.log(sortBy('content'));
 console.log(sortBy('completed'));
@@ -45,7 +46,6 @@ let todos4 = [
 ];
 
 function addTodo(newTodo) {
-
   return todos4 = [newTodo, ...todos];
 }
 
@@ -62,7 +62,7 @@ let todos5 = [
 ];
 
 function removeTodo(id) {
-  return todos5 = todos5.splice(1, 1);
+  return todos5 = todos5.filter(todo => todo.id !== id)
 }
 
 removeTodo(2);
@@ -77,10 +77,49 @@ let todos6 = [
   { id: 1, content: 'Javascript', completed: false }
 ];
 function toggleCompletedById(id) {
-  
+  return todos6 = todos6.map(todo => todo.id === id ? {...todo, completed: !todo.completed} : todo);
 }
 
 toggleCompletedById(2);
 
 console.log(todos6);
+
+
+// 7번
+let todos7 = [
+  { id: 3, content: 'HTML', completed: false },
+  { id: 2, content: 'CSS', completed: true },
+  { id: 1, content: 'Javascript', completed: false }
+];
+
+function toggleCompletedAll() {
+  return todos7 = todos7.map(todo => todo.completed === false ? {...todo, completed: !todo.completed} : todo);
+}
+
+toggleCompletedAll();
+
+console.log(todos7);
+
+
+// 8번
+
+
+
+// 9번
+let todos9 = [
+  { id: 3, content: 'HTML', completed: false },
+  { id: 2, content: 'CSS', completed: true },
+  { id: 1, content: 'Javascript', completed: false }
+];
+
+function getMaxId() {
+  // console.log(...todos9.map(todo => todo.id));
+  // console.log(Math.max(1, 2, 3));
+  // console.log(Math.max([1, ,2, 3]))
+  return todos9 = Math.max(...todos9.map(todo => todo.id));
+}
+
+console.log(getMaxId());
+
+
 
