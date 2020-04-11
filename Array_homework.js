@@ -102,7 +102,17 @@ console.log(todos7);
 
 
 // 8번
+let todos8 = [
+  { id: 3, content: 'HTML', completed: false },
+  { id: 2, content: 'CSS', completed: true },
+  { id: 1, content: 'Javascript', completed: false }
+];
 
+function countCompletedTodos() {
+  return todos8 = todos8.filter(todo => todo.completed === true)
+}
+
+console.log(countCompletedTodos());
 
 
 // 9번
